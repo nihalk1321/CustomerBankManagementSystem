@@ -1,0 +1,14 @@
+<p>register-customer works!</p>
+<form #postData="ngForm" (ngSubmit)="registerCustomer(postData.value)">
+
+    Name : <input type="text" name="name" ngModel><br>
+    Email : <input type="text" name="email" ngModel><br>
+    Phone : <input type="text" name="phone" ngModel><br>
+    Username : <input type="text" name="username" ngModel><br>
+    Password : <input type="text" name="password" ngModel><br>
+    Address : <input type="text" name="address" ngModel><br>
+    Balance : <input type="text" name="balance" ngModel><br>
+
+    <button class="btn btn-primary">Add customer</button>
+    
+</form>

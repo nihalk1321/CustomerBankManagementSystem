@@ -1,0 +1,7 @@
+<p>send-to-payee works!</p>
+<form #postData="ngForm" (ngSubmit)="sendToPayeeHandler(postData.value)">
+    customerId <input type="number" name="cid" ngModel><br>
+    Amount : <input type="number" name="amount" ngModel><br>
+    Payee id : <input type="number" name="accountNumber" ngModel><br>
+    <button class="btn btn-primary">send Payee</button>
+</form>

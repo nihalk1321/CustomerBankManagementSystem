@@ -1,0 +1,37 @@
+<p>customer-list works!</p>
+<div class="container">
+    <hr>
+    <table class="table table-striped">
+
+        <tr>
+            <!-- <th>customerid</th> -->
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>username</th>
+            <!-- <th>passwprd</th> -->
+           
+
+        </tr>
+
+        <tbody>
+            <tr *ngFor="let customer of customers">
+                <!-- <td>{{customer.customerId}}</td> -->
+                <td>{{customer.customerName}}</td>
+                <td>{{customer.customerEmail}}</td>
+                <td>{{customer.customerAddress}}</td>
+                <td>{{customer.customerPhone}}</td>
+                <td>{{customer.customerUserName}}</td>
+                <!-- <td>{{customer.customerPassword}}</td> -->
+              
+                 
+              <button class="btn btn-info" style="margin-left: 10px;" ><a  [routerLink]="['/withdraw',customer.customerId]">Transaction</a></button>
+              <td><input type="button" class="btn btn-danger" value="delete" (click)="deleteHandler(customer.customerId)">
+                  
+            </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

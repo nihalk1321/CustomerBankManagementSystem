@@ -1,0 +1,12 @@
+<p>withdraw works!</p>
+<form #postData="ngForm" (ngSubmit)="transaction(postData.value)">
+
+    Amount : <input type="number" name="amount" ngModel><br>
+    <input type="radio" name="transactionType" ngModel value="withdraw">
+      <label >Withdraw</label><br>
+      <input type="radio" name="transactionType" ngModel value="deposit">
+      <label >Deposit</label><br>
+
+    <button class="btn btn-primary">Submit</button>
+
+</form>
