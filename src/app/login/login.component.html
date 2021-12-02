@@ -1,10 +1,46 @@
-<p>login works!</p>
+<!DOCTYPE html>
+<html>
 
-  
-<form action=>
-    <label for="username">User name:</label><br>
-    <input type="text" id="username" name="username" ><br>
-    <label for="password">password:</label><br>
-    <input type="text" id="password" name="password" ><br><br>
-    <input type="submit" value="Submit">
-</form>
+<head>
+    <title> Login Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #main {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main">
+        <div class="login-content">
+            <form action="">
+                <img src="assets/avatar.svg">
+                <h2 class="title">Welcome</h2>
+                <div class="input-div one">
+                    <div class="div">
+                        <h5>Username</h5>
+                        <input type="text" class="input" name="username">
+                    </div>
+                </div>
+                <div class="input-div pass">
+                    <div class="div">
+                        <h5>Password</h5>
+                        <input type="password" class="input" name="password">
+                    </div>
+                </div>
+                <a href="#">Forgot Password?</a>
+                <br>
+                <input type="submit" class="btn" style="margin: 10px; font-size: large;" routerLink="/employee"
+                    value="Employee Login">
+                <input type="submit" class="btn" style="margin: 10px; font-size: large;" routerLink="/customer"
+                    value="Customer Login">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

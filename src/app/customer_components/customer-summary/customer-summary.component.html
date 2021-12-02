@@ -1,7 +1,7 @@
 <p>customer-summary works!</p>
-<div class="jumbotron">>
+<div class="jumbotron">
   <div>
-    <h1>Get data</h1>
+    <h3>Get data</h3>
     <form #postData="ngForm" (ngSubmit)="getCustomerSummaryHandler(postData.value)">
       Id : <input type="number" name="id" ngModel><br>
       <button class="btn btn-primary">Get summary</button>

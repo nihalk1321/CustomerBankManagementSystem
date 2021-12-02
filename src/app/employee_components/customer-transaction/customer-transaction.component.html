@@ -1,0 +1,15 @@
+<p>customer-transaction works!</p>
+<div class="container">
+    <button> <a style="margin: 10px; font-size: large;" routerLink="/customerList"> Back</a></button><br>
+    <form #editData="ngForm" (ngSubmit)="transactionHandler(editData.value)">
+  
+      Amount : <input type="number" name="amount" ngModel><br>
+      <input type="radio" name="transactionType" ngModel value="withdraw">
+      <label>Withdraw</label><br>
+      <input type="radio" name="transactionType" ngModel value="deposit">
+      <label>Deposit</label><br>
+  
+      <button class="btn btn-primary">Submit</button>
+  
+    </form>
+  </div>

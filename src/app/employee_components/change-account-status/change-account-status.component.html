@@ -1,1 +1,18 @@
 <p>change-account-status works!</p>
+
+<div class="container">
+    <button> <a style="margin: 10px; font-size: large;" routerLink="/customerList"> Back</a></button><br>
+    <h2>change account status</h2>
+    <form #postData="ngForm" (ngSubmit)="changeAccountStatusHandler(postData.value)">
+        <br>
+        <input type="radio" name="statusType" ngModel value="inactive">
+          <label>Inactive</label><br>
+          <input type="radio" name="statusType" ngModel value="active">
+          <label>Active</label><br>
+        <input type="radio" name="statusType" ngModel value="Locked">
+          <label>Lock</label><br>
+
+
+        <button class="btn btn-primary">Change Status</button>
+    </form>
+</div>

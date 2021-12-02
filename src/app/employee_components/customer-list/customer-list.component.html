@@ -1,6 +1,8 @@
 <p>customer-list works!</p>
 <div class="container">
     <hr>
+
+    <button> <a style="margin: 10px; font-size: large;" routerLink="/employee"> Back</a></button><br>
     <table class="table table-striped">
 
         <tr>
@@ -26,10 +28,11 @@
                 <!-- <td>{{customer.customerPassword}}</td> -->
               
                  
-              <button class="btn btn-info" style="margin-left: 10px;" ><a  [routerLink]="['/withdraw',customer.customerId]">Transaction</a></button>
-              <td><input type="button" class="btn btn-danger" value="delete" (click)="deleteHandler(customer.customerId)">
+              <button class="btn btn-info" style="margin-left: 10px;" ><a  [routerLink]="['/customerTransaction',customer.customerId]">Transaction</a></button>
+              <button class="btn btn-info" style="margin-left: 10px;" ><a  [routerLink]="['/changeAccountStatus',customer.customerId]">chnage Status</a></button>
+              <!-- <td><input type="button" class="btn btn-danger" value="delete" (click)="deleteHandler(customer.customerId)"> -->
                   
-            </td>
+            <!-- </td> -->
             </tr>
         </tbody>
     </table>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/customer.service';
 import { IPayee } from 'src/app/Interfaces/IPayee';
 
@@ -10,7 +11,7 @@ import { IPayee } from 'src/app/Interfaces/IPayee';
 export class AddPayeeComponent implements OnInit {
   payee: IPayee;
   payees: IPayee[];
-  constructor(private customerService: CustomerService) {
+  constructor(private customerService: CustomerService, private router: Router) {
     this.payee = {
       payeeName: "",
       payeeAccountNumber: 0
@@ -27,7 +28,9 @@ export class AddPayeeComponent implements OnInit {
     this.payees.push(this.payee)
     this.customerService.addPayeeService(payeeData.cid, this.payees)
       .subscribe(data => {
-        console.log(data);
+        console.log(data)
+        alert("payee added successfully")
+        this.router.navigate(['customer']);
       })
   }
 }
