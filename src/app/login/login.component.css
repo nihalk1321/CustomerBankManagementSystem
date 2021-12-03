@@ -1,4 +1,4 @@
-*{
+/* *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -159,7 +159,7 @@
   a:hover{
     color: #f84d4c;
   }
-  
+   */
   .btn{
     display: block;
     width: 100%;
@@ -181,7 +181,7 @@
     background-position: right;
   }
   
-  
+/*   
   @media screen and (max-width: 1050px){
     .container{
       grid-gap: 5rem;
@@ -219,4 +219,4 @@
     .login-content{
       justify-content: center;
     }
-  }
+  } */

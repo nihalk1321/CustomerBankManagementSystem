@@ -26,7 +26,7 @@ export class RegisterCustomerComponent implements OnInit {
       account: {
         accountId: 0,
         accountNumber: 0,
-        accountBalance: 0,
+        accountBalance: 500,
         status: "ACTIVE",
       },
       transactions: [{
@@ -45,12 +45,12 @@ export class RegisterCustomerComponent implements OnInit {
     this.customer.customerUserName = inputCustomer.username
     this.customer.customerPassword = inputCustomer.password
     this.customer.customerAddress = inputCustomer.address
-    this.customer.account.accountBalance = inputCustomer.balance
+    // this.customer.account.accountBalance = inputCustomer.balanc
     console.log("compo" + this.customer.customerName)
     this.empServ.registerCustomerService(this.customer).subscribe()
 
     alert("Account created")
-    
+
   }
 
 

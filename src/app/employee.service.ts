@@ -17,11 +17,20 @@ export class EmployeeService {
       'Content-Type': 'application.json'
     })
   }
-  // CHANGE EMPLOYEE PASSWORD
-  changeEmployeePasswordHandler(){
-    
+
+  getEmployeeById(id: number) {
+
+    return this.http.get(this.url + "/getEmployeeById/" + id);
   }
-  
+  editEmployeeService(employeeId: number, employeeData: any) {
+
+    return this.http.put(this.url + "/editEmployee/" + employeeId, employeeData)
+  }
+  // CHANGE EMPLOYEE PASSWORD
+  changeEmployeePasswordHandler() {
+
+  }
+
   // GET ALL CUSTOMER 
   getAllCustomerService(): Observable<any> {
     return this.http.get(this.url + "/getCustomers")
@@ -32,19 +41,19 @@ export class EmployeeService {
     return this.http.post(this.url + "/addCustomer", customer)
   }
   // CHANGE ACCOUNT STATUS
-  changeStatusService(cid: number, statusType: any) :Observable<any>{
+  changeStatusService(cid: number, statusType: any): Observable<any> {
     console.log("Serv " + statusType)
     console.log("serv " + cid)
     if (statusType == 'active') {
-      return this.http.post(this.url + "/setCustomerStatusActive/" + cid,null)
-console.log('active')
+      return this.http.post(this.url + "/setCustomerStatusActive/" + cid, null)
+      console.log('active')
     }
     else if (statusType == 'inactive') {
-      return this.http.post(this.url + "/setCustomerStatusInactive/" + cid,null)
+      return this.http.post(this.url + "/setCustomerStatusInactive/" + cid, null)
       console.log('inactive')
     }
     else {
-      return this.http.post(this.url + "/setCustomerStatusLocked/" + cid,null)
+      return this.http.post(this.url + "/setCustomerStatusLocked/" + cid, null)
       console.log('locked')
     }
 

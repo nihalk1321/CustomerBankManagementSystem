@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/customer.service';
 
 @Component({
@@ -8,18 +8,21 @@ import { CustomerService } from 'src/app/customer.service';
   styleUrls: ['./send-to-payee.component.css']
 })
 export class SendToPayeeComponent implements OnInit {
-
-  constructor(private custServ:CustomerService,private router:Router) { }
+  param: any
+  constructor(private custServ: CustomerService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.param = this.route.snapshot.paramMap.get("payee.payeeId");
+    console.log(this.param)
   }
 
-  sendToPayeeHandler(formData:any){
-    this.custServ.sendToPayeeService(formData.cid,formData.amount,formData.accountNumber)
-    .subscribe(data=>{
-      alert("payee added successfully")
+  sendToPayeeHandler(formData: any) {
+    console.log("form  "+formData.amount)
+    this.custServ.sendToPayeeService(24, formData.amount, this.param)
+      .subscribe(data => {
+        alert("Transferred to successfully ")
         this.router.navigate(['customer']);
-    })
+      })
 
 
   }

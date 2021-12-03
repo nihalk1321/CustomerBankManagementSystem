@@ -1,17 +1,21 @@
-<p>register-customer works!</p>
-<div class="container">
+<header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
+
+<div class="container" style="align-content: center;">
     <button> <a style="margin: 10px; font-size: large;" routerLink="/employee"> Back</a></button><br>
     <form #postData="ngForm" (ngSubmit)="registerCustomer(postData.value)">
-
-        Name : <input type="text" name="name" ngModel><br>
-        Email : <input type="text" name="email" ngModel><br>
-        Phone : <input type="text" name="phone" ngModel><br>
+<br>
+        Name :     <input type="text" name="name" ngModel><br>
+        Email :    <input type="text" name="email" ngModel><br>
+        Phone :    <input type="text" name="phone" ngModel><br>
         Username : <input type="text" name="username" ngModel><br>
         Password : <input type="text" name="password" ngModel><br>
-        Address : <input type="text" name="address" ngModel><br>
-        Balance : <input type="text" name="balance" ngModel><br>
+        Address :  <input type="text" name="address" ngModel><br>
+        Balance :  <input type="text" name="balance" ngModel><br><br>
 
         <button class="btn btn-primary">Add customer</button>
 
     </form>
 </div>
+<footer>
+    <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
+</footer>

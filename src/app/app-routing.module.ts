@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { AddPayeeComponent } from "./customer_components/add-payee/add-payee.component";
 import { CustomerSummaryComponent } from "./customer_components/customer-summary/customer-summary.component";
 import { CustomerComponent } from "./customer_components/customer/customer.component";
+import { PayeeListComponent } from "./customer_components/payee-list/payee-list.component";
 import { SendToPayeeComponent } from "./customer_components/send-to-payee/send-to-payee.component";
 import { UpdateCustomerProfileComponent } from "./customer_components/update-customer-profile/update-customer-profile.component";
 import { ChangeAccountStatusComponent } from "./employee_components/change-account-status/change-account-status.component";
@@ -61,8 +62,12 @@ export const RouteArray: Routes = [
     component: UpdateCustomerProfileComponent
   },
   {
-    path: 'sendToPayee',
+    path: 'sendToPayee/:payee.payeeId',
     component: SendToPayeeComponent
+  },
+  {
+    path: 'payeeList/:customerId',
+    component: PayeeListComponent
   },
   {
     path: '',

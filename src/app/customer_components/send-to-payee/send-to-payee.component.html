@@ -1,4 +1,4 @@
-<p>send-to-payee works!</p>
+<!-- <p>send-to-payee works!</p>
 <div class="container">
     <form #postData="ngForm" (ngSubmit)="sendToPayeeHandler(postData.value)">
         customerId <input type="number" name="cid" ngModel><br>
@@ -6,4 +6,79 @@
         Payee id : <input type="number" name="accountNumber" ngModel><br>
         <button class="btn btn-primary">send Payee</button>
     </form>
-</div>
+</div> -->
+<header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send_Payee</title>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+</head>
+<header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
+
+
+<body>
+    <button><a routerLink="/customer">Back</a></button>
+    <div class="jumbotron">
+        <div class="row centered-form">
+            <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Send Money to Payee</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form #postData="ngForm" (ngSubmit)="sendToPayeeHandler(postData.value)">
+                            <!-- <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="number" name="cid" id="customerId" class="form-control input-sm"
+                                            placeholder="customerId" ngModel>
+                                    </div>
+                                </div> --> -->
+                                <!-- <div class="col-xs-6 col-sm-6 col-md-6">
+                                    <div class="form-group">
+                                        <input type="number" name="accountNumber" id="payeeId"
+                                            class="form-control input-sm" placeholder="Payee Id" ngModel>
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+
+                                <div class="form-group">
+                                    <input type="number" name="amount" class="form-control" placeholder="Amount" ngModel>
+                                </div>
+
+                                <input type="submit" value="Transfer to Payee" class="btn btn-info btn-block">
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
+    </footer>
+</body>
+
+</html>
+
+
+<!-- <div>
+    <h1>Send to Payee</h1>
+    <form #postData="ngForm" (ngSubmit)="sendToPayeeHandler(postData.value)">
+        Customer Id : <input type="number" name="customerId" ngModel><br>
+        Payee Id : <input type="number" name="payeeId" ngModel><br>
+        Amount : <input type="number" name="amount" ngModel><br>
+        <button class="btn btn-primary">Send</button>
+    </form>
+</div> -->

@@ -28,12 +28,18 @@ export class CustomerService {
   editCustomer(customerId: number, customerData: any) {
     console.log("inside edit data")
     console.log("id-" + customerId)
-    console.log("name-" + customerData.customerName)
+    console.log("name-" + customerData)
 
     return this.http.put(this.url + "/editCustomer/" + customerId, customerData, { responseType: 'text' })
   }
 
+  authenticate(data: any): Observable<any> {
+    console.log(data.userNameDTO);
+    console.log(data.passwordDTO);
+    console.log(data);
 
+    return this.http.post(this.url + "/authenticate", data)
+  }
   addPayeeService(cid: number, payees: IPayee[]): Observable<any> {
     console.log('inside service')
     return this.http.post(this.url + "/addPayee/" + cid, payees)
@@ -42,5 +48,12 @@ export class CustomerService {
 
   sendToPayeeService(cid: number, amount: number, accountNumber: number): Observable<any> {
     return this.http.post(this.url + "/" + cid + "/sendToPayee/" + accountNumber, amount)
+  }
+
+  getAllPayeesService(customerId: number): Observable<any> {
+    console.log("inside serv")
+    console.log(customerId);
+    return this.http.get(this.url + "/getAllPayees/" + customerId)
+
   }
 }

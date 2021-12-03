@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/customer.service';
+import { ICustomer } from 'src/app/Interfaces/ICustomer';
+import { ICustomerDTO } from 'src/app/Interfaces/ICustomerDTO';
 
 @Component({
   selector: 'app-update-customer-profile',
@@ -8,17 +10,35 @@ import { CustomerService } from 'src/app/customer.service';
   styleUrls: ['./update-customer-profile.component.css']
 })
 export class UpdateCustomerProfileComponent implements OnInit {
-
-  constructor(private customerService:CustomerService,private router:Router) { }
+  customerDTO: ICustomerDTO;
+  customer: ICustomer;
+  constructor(private customerService: CustomerService, private route: ActivatedRoute, private router: Router) {
+    this.customer = {}
+    this.customerDTO = {
+      customerDTOEmail: "",
+      customerDTOPhone: 0,
+    }
+  }
 
   ngOnInit(): void {
-  }
-  // editCustomerHandler(data: any) {
-  //   this.customerService.editCustomer(22, data)
-  //     .subscribe((data: any) => {
-  //       console.log(data)
-  //       this.router.navigate(['customer'])
-  //     })
-  // }
+    console.log("Inside ng init");
 
+    this.customerService.getCustomerDetailsByIdService(63)
+      .subscribe((data: any) => {
+        this.customer = data;
+        console.log(this.customer)
+      })
+  }
+  editCustomerHandler(data: any) {
+    this.customerDTO.customerDTOEmail = data.email;
+    this.customerDTO.customerDTOPhone = data.phone;
+
+    this.customerService.editCustomer(63, this.customerDTO)
+      .subscribe((data: any) => {
+        console.log(data)
+        this.router.navigate(['customer'])
+      })
+  }
 }
+
+

@@ -1,9 +1,8 @@
-<p>customer works!</p>
-<p>customer works!</p>
-
+<header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
+<!-- 
 <div class="container">
 
-  <h3>customer</h3>
+  <h3>customer</h3><button><a routerLink="/login">Logout</a></button>
 
   <ul>
     <li><a routerLink="/customer">Home</a></li>
@@ -18,11 +17,69 @@
     <li>
       <a routerLink="/customer">Transactions <span class="caret"></span></a>
       <ul>
-        <li><a routerLink="/sendToPayee">sendToPayee</a></li>
-      </ul>
+        <li><a [routerLink]="['/payeeList',24]">sendToPayee</a></li>
+        <!-- [routerLink]="['/customerTransaction',customer.customerId]" -->
+<!-- </ul>
     </li>
   </ul>
-</div>
+</div> --> -->
+<!-- <footer>
+  <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
+</footer> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Customer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"> -->
+
+</head>
+
+<body style="background-color:rgb(208, 238, 138);" id="content-wrap">
+  <!-- <img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"> -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Bank</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a routerLink="/customer">Home</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Services
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a style="margin: 10px; font-size: large;" routerLink="/customerSummary">Account Summary</a></li>
+            <li><a style="margin: 10px; font-size: large;" routerLink="/updateCProfile">Update Profile</a></li>
+            <li><a style="margin: 10px; font-size: large;" routerLink="/addPayee">Add Payee</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Transaction
+            <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a style="margin: 10px; font-size: large;" [routerLink]="['/payeeList',24]">Send Payee</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="img">
+      <img src="assets/user.jpg">
+    </div>
+  </div>
+  <footer id="footer">
+    <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
+  </footer>
+</body>
+
+</html>
+
 
 <!-- 
 <form #postData="ngForm" (ngSubmit)="addPayeeHandler(postData.value)">

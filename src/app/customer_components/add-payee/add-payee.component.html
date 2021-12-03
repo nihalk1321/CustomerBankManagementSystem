@@ -1,4 +1,4 @@
-<p>add-payee works!</p>
+<!-- <p>add-payee works!</p>
 <div class="container">
   <h1>Add Payee</h1>
   <form #postData="ngForm" (ngSubmit)="addPayeeHandler(postData.value)">
@@ -7,4 +7,73 @@
     Payee Account Number : <input type="number" name="accountNumber" ngModel><br>
     <button class="btn btn-primary">Add Payee</button>
   </form>
-</div>
+</div> -->
+<!DOCTYPE html>
+<html lang="en" style="background-color:powderblue;">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Payee</title>
+  <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+  <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'> -->
+</head>
+<header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
+
+<body>
+
+  <button><a routerLink="/customer">Back</a></button>
+  <div class="container-fluid">
+
+    <form action="" method="" class="register-form" #postData="ngForm" (ngSubmit)="addPayeeHandler(postData.value)">
+      <div class="note">
+        <h3 style="color: sienna;">Add Payee Details</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <label for="PayeeId">customer ID</label>
+          <input name="cid" ngModel class="form-control" type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <label for="PayeeName">Payee Name</label>
+          <input name="name" ngModel class="form-control" type="text">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 col-sm-4 col-lg-4">
+          <label for="PayeeAccountNumber">Payee Account Number</label>
+          <input name="accountNumber" ngModel class="form-control" type="text">
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 col-lg-6">
+          <button class="btn btn-default regbutton">Submit</button>
+
+        </div>
+      </div>
+    </form>
+
+  </div>
+  <footer>
+    <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
+  </footer>
+</body>
+
+</html>
+
+<!-- 
+<div>
+  <h1>Add Payee</h1>
+  <form #postData="ngForm" (ngSubmit)="addPayeeHandler(postData.value)">
+    Payee Name : <input type="text" name="name" ngModel><br>
+    Payee Account Number : <input type="text" name="accountNumber" ngModel><br>
+    <button class="btn btn-primary">Add</button>
+  </form>
+</div> -->

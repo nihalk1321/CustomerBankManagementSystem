@@ -17,6 +17,7 @@ import { UpdateCustomerProfileComponent } from './customer_components/update-cus
 import { AddPayeeComponent } from './customer_components/add-payee/add-payee.component';
 import { SendToPayeeComponent } from './customer_components/send-to-payee/send-to-payee.component';
 import { CustomerTransactionComponent } from './employee_components/customer-transaction/customer-transaction.component';
+import { PayeeListComponent } from './customer_components/payee-list/payee-list.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CustomerTransactionComponent } from './employee_components/customer-tra
     UpdateCustomerProfileComponent,
     AddPayeeComponent,
     SendToPayeeComponent,
-    CustomerTransactionComponent
+    CustomerTransactionComponent,
+    PayeeListComponent
   ],
   imports: [
     BrowserModule,HttpClientModule,FormsModule,ReactiveFormsModule,RouterModule.forRoot(RouteArray)

@@ -17,26 +17,26 @@
 <body>
     <div id="main">
         <div class="login-content">
-            <form action="">
+            <form #postData="ngForm" (ngSubmit)="loginHandler(postData.value)">
                 <img src="assets/avatar.svg">
                 <h2 class="title">Welcome</h2>
                 <div class="input-div one">
                     <div class="div">
                         <h5>Username</h5>
-                        <input type="text" class="input" name="username">
+                        <input type="text" class="input" name="customerUserName">
                     </div>
                 </div>
                 <div class="input-div pass">
                     <div class="div">
                         <h5>Password</h5>
-                        <input type="password" class="input" name="password">
+                        <input type="password" class="input" name="customerPassword">
                     </div>
                 </div>
                 <a href="#">Forgot Password?</a>
                 <br>
                 <input type="submit" class="btn" style="margin: 10px; font-size: large;" routerLink="/employee"
                     value="Employee Login">
-                <input type="submit" class="btn" style="margin: 10px; font-size: large;" routerLink="/customer"
+                <input type="submit" class="btn" style="margin: 10px; font-size: large;" 
                     value="Customer Login">
             </form>
         </div>
@@ -44,3 +44,13 @@
 </body>
 
 </html>
+<!-- 
+<div class="container">
+    <h1 style="grid-template-columns: auto;">Login</h1>
+    <form #postData="ngForm" (ngSubmit)="loginHandler(postData.value)">
+        Username : <input type="text" name="customerUserName" ngModel><br>
+        Password : <input type="text" name="customerPassword" ngModel><br>
+        <button class="btn btn-primary">Customer Login</button>
+
+    </form>
+</div> -->
