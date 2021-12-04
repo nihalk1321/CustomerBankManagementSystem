@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+import { AppGaurdGuard } from "./app-gaurd.guard";
 import { AddPayeeComponent } from "./customer_components/add-payee/add-payee.component";
 import { CustomerSummaryComponent } from "./customer_components/customer-summary/customer-summary.component";
 import { CustomerComponent } from "./customer_components/customer/customer.component";
@@ -19,11 +20,18 @@ export const RouteArray: Routes = [
   {
     path: 'employee',
     component: EmployeeComponent,
+    canActivate:[AppGaurdGuard]
   },
-
+  {
+    path: 'customer/:customerId',
+    component: CustomerComponent,
+    canActivate:[AppGaurdGuard]
+  },
+ 
   {
     path: 'customer',
     component: CustomerComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'login',
@@ -31,43 +39,53 @@ export const RouteArray: Routes = [
   },
   {
     path: 'registerCustomer',
-    component: RegisterCustomerComponent
+    component: RegisterCustomerComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'customerList',
-    component: CustomerListComponent
+    component: CustomerListComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'updateEProfile',
-    component: UpdateProfileComponent
+    component: UpdateProfileComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'changeAccountStatus/:customerId',
-    component: ChangeAccountStatusComponent
+    component: ChangeAccountStatusComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'customerTransaction/:customerId',
-    component: CustomerTransactionComponent
+    component: CustomerTransactionComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'customerSummary',
-    component: CustomerSummaryComponent
+    component: CustomerSummaryComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'addPayee',
-    component: AddPayeeComponent
+    component: AddPayeeComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'updateCProfile',
-    component: UpdateCustomerProfileComponent
+    component: UpdateCustomerProfileComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'sendToPayee/:payee.payeeId',
-    component: SendToPayeeComponent
+    component: SendToPayeeComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: 'payeeList/:customerId',
-    component: PayeeListComponent
+    component: PayeeListComponent,
+    canActivate:[AppGaurdGuard]
   },
   {
     path: '',

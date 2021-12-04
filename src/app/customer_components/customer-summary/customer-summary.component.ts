@@ -39,10 +39,13 @@ export class CustomerSummaryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+this.getCustomerSummaryHandler()
   }
-  getCustomerSummaryHandler(id: any) {
-    console.log('compo id='+id.id)
-    this.customerService.getCustomerDetailsByIdService(id.id)
+  getCustomerSummaryHandler() {
+    // console.log('compo id='+id.id
+    // sessionStorage.getItem('loginId')
+    console.log('inside get item  '+sessionStorage.getItem('loginId'))
+    this.customerService.getCustomerDetailsByIdService(sessionStorage.getItem('loginId'))
       .subscribe(data => {
         // console.log(data.customerId)
         this.customer=data;

@@ -18,7 +18,7 @@ export class PayeeListComponent implements OnInit {
 
   getAllPayees() {
     console.log("inside com")
-    this.custServ.getAllPayeesService(24)
+    this.custServ.getAllPayeesService(sessionStorage.getItem('loginId'))
       .subscribe(data => this.payees=data)
     console.log(this.payees)
   }

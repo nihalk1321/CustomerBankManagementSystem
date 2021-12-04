@@ -23,8 +23,8 @@ export class UpdateCustomerProfileComponent implements OnInit {
   ngOnInit(): void {
     console.log("Inside ng init");
 
-    this.customerService.getCustomerDetailsByIdService(63)
-      .subscribe((data: any) => {
+    this.customerService.getCustomerDetailsByIdService(sessionStorage.getItem('loginId'))
+      .subscribe(data => {
         this.customer = data;
         console.log(this.customer)
       })
@@ -33,7 +33,7 @@ export class UpdateCustomerProfileComponent implements OnInit {
     this.customerDTO.customerDTOEmail = data.email;
     this.customerDTO.customerDTOPhone = data.phone;
 
-    this.customerService.editCustomer(63, this.customerDTO)
+    this.customerService.editCustomer(sessionStorage.getItem('loginid'), this.customerDTO)
       .subscribe((data: any) => {
         console.log(data)
         this.router.navigate(['customer'])

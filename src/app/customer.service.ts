@@ -25,12 +25,17 @@ export class CustomerService {
   }
 
 
-  editCustomer(customerId: number, customerData: any) {
+  editCustomer(customerId: any, customerData: any) {
     console.log("inside edit data")
     console.log("id-" + customerId)
     console.log("name-" + customerData)
 
     return this.http.put(this.url + "/editCustomer/" + customerId, customerData, { responseType: 'text' })
+  }
+
+  checkCustomerStatusService(id: any):Observable<any> {
+    console.log("inside service status"+id)
+    return this.http.get(this.url + "/getAccountStatus/" + id)
   }
 
   authenticate(data: any): Observable<any> {
@@ -40,17 +45,17 @@ export class CustomerService {
 
     return this.http.post(this.url + "/authenticate", data)
   }
-  addPayeeService(cid: number, payees: IPayee[]): Observable<any> {
+  addPayeeService(cid: any, payees: IPayee[]): Observable<any> {
     console.log('inside service')
     return this.http.post(this.url + "/addPayee/" + cid, payees)
 
   }
 
-  sendToPayeeService(cid: number, amount: number, accountNumber: number): Observable<any> {
+  sendToPayeeService(cid: any, amount: number, accountNumber: number): Observable<any> {
     return this.http.post(this.url + "/" + cid + "/sendToPayee/" + accountNumber, amount)
   }
 
-  getAllPayeesService(customerId: number): Observable<any> {
+  getAllPayeesService(customerId: any): Observable<any> {
     console.log("inside serv")
     console.log(customerId);
     return this.http.get(this.url + "/getAllPayees/" + customerId)

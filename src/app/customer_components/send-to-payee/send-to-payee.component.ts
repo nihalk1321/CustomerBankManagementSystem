@@ -18,7 +18,7 @@ export class SendToPayeeComponent implements OnInit {
 
   sendToPayeeHandler(formData: any) {
     console.log("form  "+formData.amount)
-    this.custServ.sendToPayeeService(24, formData.amount, this.param)
+    this.custServ.sendToPayeeService(sessionStorage.getItem('loginId'), formData.amount, this.param)
       .subscribe(data => {
         alert("Transferred to successfully ")
         this.router.navigate(['customer']);

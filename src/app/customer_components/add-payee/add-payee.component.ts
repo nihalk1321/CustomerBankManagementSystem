@@ -26,7 +26,7 @@ export class AddPayeeComponent implements OnInit {
     this.payee.payeeName = payeeData.name
     this.payee.payeeAccountNumber = payeeData.accountNumber
     this.payees.push(this.payee)
-    this.customerService.addPayeeService(payeeData.cid, this.payees)
+    this.customerService.addPayeeService(sessionStorage.getItem('loginId'), this.payees)
       .subscribe(data => {
         console.log(data)
         alert("payee added successfully")
