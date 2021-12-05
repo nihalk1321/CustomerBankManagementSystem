@@ -6,6 +6,7 @@ import { CustomerComponent } from "./customer_components/customer/customer.compo
 import { PayeeListComponent } from "./customer_components/payee-list/payee-list.component";
 import { SendToPayeeComponent } from "./customer_components/send-to-payee/send-to-payee.component";
 import { UpdateCustomerProfileComponent } from "./customer_components/update-customer-profile/update-customer-profile.component";
+import { EmpGuard } from "./emp.guard";
 import { ChangeAccountStatusComponent } from "./employee_components/change-account-status/change-account-status.component";
 import { CustomerListComponent } from "./employee_components/customer-list/customer-list.component";
 import { CustomerTransactionComponent } from "./employee_components/customer-transaction/customer-transaction.component";
@@ -20,18 +21,18 @@ export const RouteArray: Routes = [
   {
     path: 'employee',
     component: EmployeeComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [EmpGuard]
   },
   {
     path: 'customer/:customerId',
     component: CustomerComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [AppGaurdGuard]
   },
- 
+
   {
     path: 'customer',
     component: CustomerComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [AppGaurdGuard]
   },
   {
     path: 'login',
@@ -40,52 +41,52 @@ export const RouteArray: Routes = [
   {
     path: 'registerCustomer',
     component: RegisterCustomerComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [EmpGuard]
   },
   {
     path: 'customerList',
     component: CustomerListComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [EmpGuard]
   },
   {
     path: 'updateEProfile',
     component: UpdateProfileComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [EmpGuard]
   },
   {
     path: 'changeAccountStatus/:customerId',
     component: ChangeAccountStatusComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [EmpGuard]
   },
   {
     path: 'customerTransaction/:customerId',
     component: CustomerTransactionComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [EmpGuard]
   },
   {
     path: 'customerSummary',
     component: CustomerSummaryComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [AppGaurdGuard]
   },
   {
     path: 'addPayee',
     component: AddPayeeComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [AppGaurdGuard]
   },
   {
     path: 'updateCProfile',
     component: UpdateCustomerProfileComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [AppGaurdGuard]
   },
   {
     path: 'sendToPayee/:payee.payeeId',
     component: SendToPayeeComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [AppGaurdGuard]
   },
   {
     path: 'payeeList/:customerId',
     component: PayeeListComponent,
-    canActivate:[AppGaurdGuard]
+    canActivate: [AppGaurdGuard]
   },
   {
     path: '',

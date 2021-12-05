@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/employee.service';
+import { IAccount } from 'src/app/Interfaces/iAccount';
 import { ICustomer } from 'src/app/Interfaces/ICustomer';
 
 @Component({
@@ -9,6 +10,7 @@ import { ICustomer } from 'src/app/Interfaces/ICustomer';
 })
 export class CustomerListComponent implements OnInit {
   customers: ICustomer[];
+  // account:IAccount
   constructor(private empServ: EmployeeService) {
     this.customers = []
   }
@@ -16,6 +18,7 @@ export class CustomerListComponent implements OnInit {
   getAllCustomers() {
     this.empServ.getAllCustomerService()
       .subscribe(data => {
+        console.log(data)
         this.customers = data;
       })
   }

@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     else {
       this.customerService.authenticate(this.myCred)
         .subscribe(data => {
-          if (data == null) {
+          if (data == null ||  sessionStorage.getItem('AdminId')) {
             this.router.navigate(['login'])
           }
           this.customerService.checkCustomerStatusService(data).subscribe(status => {
