@@ -9,8 +9,11 @@ import { IPayee } from '../../Interfaces/IPayee';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
+  custID:any;
  
-  constructor(private customerService: CustomerService, private route: ActivatedRoute,private router:Router) { }
+  constructor(private customerService: CustomerService, private route: ActivatedRoute,private router:Router) { 
+    this.custID = sessionStorage.getItem('loginId');
+  }
 
   ngOnInit(): void {
   }

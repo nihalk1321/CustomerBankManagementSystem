@@ -29,7 +29,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color:powderblue;">
 
 <head>
   <title>Customer</title>
@@ -45,9 +45,7 @@
   <!-- <img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"> -->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" (click)="logoutHandler()">Logout</a>
-      </div>
+      
       <ul class="nav navbar-nav">
         <li class="active"><a routerLink="/customer">Home</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Services
@@ -61,11 +59,15 @@
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Transaction
             <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a style="margin: 10px; font-size: large;" [routerLink]="['/payeeList',24]">Send Payee</a></li>
+            <li><a style="margin: 10px; font-size: large;" [routerLink]="['/payeeList',custID]">Send Payee</a></li>
           </ul>
         </li>
       </ul>
+      <div class="navbar-header" >
+        <a class="navbar-brand" (click)="logoutHandler()">Logout</a>
+      </div>
     </div>
+    
   </nav>
 
   <div class="container">

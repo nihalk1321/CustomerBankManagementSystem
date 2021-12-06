@@ -9,6 +9,7 @@ import { CustomerService } from 'src/app/customer.service';
 })
 export class SendToPayeeComponent implements OnInit {
   param: any
+  payeeName:any;
   constructor(private custServ: CustomerService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {

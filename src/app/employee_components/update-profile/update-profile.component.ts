@@ -19,7 +19,7 @@ export class UpdateProfileComponent implements OnInit {
     this.employee.employeePhone = data.phone;
     this.employee.employeeAddress = data.address;
 
-    this.employeeService.editEmployeeService(7, this.employee)
+    this.employeeService.editEmployeeService(sessionStorage.getItem('AdminId'), this.employee)
       .subscribe((data: any) => {
         console.log(data);
         this.router.navigate(['employee']);
@@ -28,9 +28,10 @@ export class UpdateProfileComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("Inside ng init");
+    console.log(sessionStorage.getItem('AdminId'));
 
-    this.employeeService.getEmployeeById(7)
-      .subscribe((data: any) => {
+    this.employeeService.getEmployeeById(sessionStorage.getItem('AdminId'))
+      .subscribe(data => {
         this.employee = data;
         console.log(this.employee);
       })

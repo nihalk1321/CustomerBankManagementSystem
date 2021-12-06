@@ -1,21 +1,96 @@
 <header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
 
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Employee</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color:powderblue;">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/employee">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Services
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/customerList">Customer List</a></li>
+                        <li><a routerLink="/registerCustomer">Register</a></li>
+                        <li><a routerLink="/updateEProfile">Update Profile</a></li>
+                    </ul>
+            </ul>
+        </div>
+    </nav>
+
 <div class="container register" style="align-content: center;">
     <button> <a style="margin: 10px; font-size: large;" routerLink="/employee"> Back</a></button><br>
     <form #postData="ngForm" (ngSubmit)="registerCustomer(postData.value)">
-<br>
-        Name :     <input type="text" name="name" ngModel><br>
+
+<h2>Register Customer Form</h2>
+        <!-- Name :     <input type="text" name="name" ngModel><br>
         Email :    <input type="text" name="email" ngModel><br>
         Phone :    <input type="text" name="phone" ngModel><br>
         Username : <input type="text" name="username" ngModel><br>
         Password : <input type="text" name="password" ngModel><br>
         Address :  <input type="text" name="address" ngModel><br>
-        Balance :  <input type="text" name="balance" ngModel><br><br>
+        Balance :  <input type="text" name="balance" ngModel><br><br> -->
 
-        <button class="btn btn-primary">Add customer</button>
+        <div class="form-group"> <label>Name : </label>
+            <input type="text" class="form-control" required #name="ngModel" placeholder="Enter Payee Name" name="name" ngModel>
+          <span *ngIf="name!.invalid && name!.touched" style="color: red;">Please enter name</span>
+            <!-- <input type="text" class="form-control" name="name" ngModel> -->
+        </div>
+        <div class="form-group"> <label>Email: </label>
+            <input type="text" class="form-control" required #email="ngModel" placeholder="Enter Payee Email" name="email" ngModel>
+          <span *ngIf="email!.invalid && email!.touched" style="color: red;">Please enter email</span>
+            <!-- <input type="text" class="form-control" name="email" ngModel> -->
+        </div>
+        <div class="form-group"> <label>Phone: </label>
+            <input type="text" class="form-control" required #phone="ngModel" placeholder="Enter Payee Phone" name="phone" ngModel>
+          <span *ngIf="phone!.invalid && phone!.touched" style="color: red;">Please enter phone</span>
+            <!-- <input type="text" class="form-control" name="phone" ngModel> -->
+        </div>
+        <div class="form-group"> <label>Username: </label>
+            <input type="text" class="form-control" required #username="ngModel" placeholder="Enter Payee User Name" name="username" ngModel>
+          <span *ngIf="username!.invalid && username!.touched" style="color: red;">Please enter username</span>
+            <!-- <input type="text" class="form-control" name="username" ngModel> -->
+        </div>
+        <div class="form-group"> <label>Password: </label>
+            <input type="text" class="form-control" required #password="ngModel" placeholder="Enter Payee Password" name="password" ngModel>
+          <span *ngIf="password!.invalid && password!.touched" style="color: red;">Please enter password</span>
+            <!-- <input type="text" class="form-control" name="password" ngModel> -->
+        </div>
+         <div class="form-group"> <label>Address: </label>
+            <input type="text" class="form-control" required #address="ngModel" placeholder="Enter Payee Address" name="address" ngModel>
+          <span *ngIf="address!.invalid && address!.touched" style="color: red;">Please enter address</span>
+            <!-- <input type="text" class="form-control" name="address" ngModel> -->
+        </div>
+        <div class="form-group"> <label>Balance: </label>
+            <input type="text" class="form-control" required #balance="ngModel" placeholder="Enter Payee Balance" name="balance" ngModel>
+          <span *ngIf="balance!.invalid && balance!.touched" style="color: red;">Please enter balance</span>
+            <!-- <input type="text" class="form-control" name="balance" ngModel> -->
+        </div>
+
+        <button class="btn btn-primary" [disabled]="postData.invalid">Add customer</button>
+<br>
+
+<br>
+<br>
+
 
     </form>
 </div>
 <footer>
     <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
 </footer>
+
+</body>
+</html>
