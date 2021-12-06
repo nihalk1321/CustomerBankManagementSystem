@@ -8,7 +8,7 @@ import { ICustomer } from './Interfaces/ICustomer';
 })
 export class EmployeeService {
 
-  url = "http://localhost:8080/employee";
+  url = "http://localhost:8111/api/v1/employee";
 
   constructor(private http: HttpClient) { }
 
@@ -25,7 +25,8 @@ export class EmployeeService {
 
     return this.http.post(this.url + "/authenticateEmp", data)
   }
-  getEmployeeById(id: any) {
+
+  getEmployeeById(id: any):Observable<any> {
 
     return this.http.get(this.url + "/getEmployeeById/" + id);
   }
@@ -40,7 +41,7 @@ export class EmployeeService {
 
   // GET ALL CUSTOMER 
   getAllCustomerService(): Observable<any> {
-    return this.http.get(this.url + "/getCustomers")
+    return this.http.get(this.url + "/getAllCustomerDetails")
   }
   // REGISTER CUSTOMER 
   registerCustomerService(customer: ICustomer): Observable<any> {
@@ -82,4 +83,16 @@ export class EmployeeService {
   withdrawService(param: any, amount: any): Observable<any> {
     return this.http.post(this.url + "/withdraw/" + param, amount.valueOf())
   }
+
+ //====AUTHENTICATION=======================================================================================
+
+ authenticate(data: any): Observable<any> {
+  console.log(data.userNameDTO);
+  console.log(data.passwordDTO);
+  console.log(data);
+
+  return this.http.post(this.url + "/authenticate", data)
+}
+
+
 }

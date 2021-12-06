@@ -14,22 +14,39 @@
     </style>
 </head>
 
+<<<<<<< HEAD
 <body  > 
+=======
+<body>
+
+    <!-- <label>Password</label>
+    <input type="password"  required #name="ngModel" placeholder="Enter Password" name="password"  ngModel>
+
+required #password="ngModel"
+    <span *ngIf="name.invalid && name.touched" style="color: red;">Please enter password</span><br>
+
+[disabled]="postData.invalid" -->
+
+>>>>>>> 8bb397fbbbe86e233a2ccb9299666f1796d3f0d7
     <div id="main">
         <div class="login-content">
-            <form #postData="ngForm" (ngSubmit)="loginHandler(postData.value)">
+            <form  #postData="ngForm" (ngSubmit)="loginHandler(postData.value)">
                 <img src="assets/avatar.svg">
                 <h2 class="title">Welcome</h2>
                 <div class="input-div one">
                     <div class="div">
                         <h5>Username</h5>
-                        <input type="text" class="input" ngModel name="customerUserName">
+                        <!-- <input type="text"  required #userName="ngModel" placeholder="Enter User Name" name="userName"  ngModel> -->
+                        <input type="text" class="input" ngModel  name="customerUserName" required>
+                        <!-- <span class = "error" *ngIf="userName!.invalid && userName!.touched" >User name is required</span> -->
                     </div>
                 </div>
                 <div class="input-div pass">
                     <div class="div">
                         <h5>Password</h5>
-                        <input type="password" class="input" ngModel name="customerPassword">
+                        <!-- <input type="password" class="input" required #customerPassword = "ngModel" placeholder="Enter Password"  name="customerPassword" ngModel> -->
+                        <input type="password" class="input" ngModel  name="customerPassword" required>
+                        <!-- <span class = "error" *ngIf="password!.invalid && password!.touched" >Password is required</span> -->
                     </div>
                     <div class="div">
                         <!-- <h5>LoginType</h5> --><br>

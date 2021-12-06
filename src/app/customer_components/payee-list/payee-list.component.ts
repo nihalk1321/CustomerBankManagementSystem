@@ -11,9 +11,15 @@ import { IPayee } from 'src/app/Interfaces/IPayee';
 export class PayeeListComponent implements OnInit {
   param: any;
   payees: IPayee[];
+  custID:any;
   constructor(private custServ: CustomerService, private route: ActivatedRoute) {
     this.payees = []
+    this.custID = sessionStorage.getItem('loginId');
   }
+
+  
+
+  
 
 
   getAllPayees() {

@@ -1,8 +1,35 @@
 <header ><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
-<hr>
+<!DOCTYPE html>
+<html lang="en" style="background-color:powderblue;">
+<body style="background-color:rgb(208, 238, 138);" id="content-wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- <a class="navbar-brand" (click)="logoutHandler()">Logout</a> -->
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a routerLink="/customer">Home</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Services
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a style="margin: 10px; font-size: large;" routerLink="/customerSummary">Account Summary</a></li>
+              <li><a style="margin: 10px; font-size: large;" routerLink="/updateCProfile">Update Profile</a></li>
+              <li><a style="margin: 10px; font-size: large;" routerLink="/addPayee">Add Payee</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Transaction
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a style="margin: 10px; font-size: large;" [routerLink]="['/payeeList',24]">Send Payee</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
 <button><a routerLink="/customer">Back</a></button>
 <div class="container">
-    <h2>Update Customer Data</h2>
+  <h2 style="color: sienna;">Update Customer Data</h2>
+    
 
     <form #editData="ngForm" (ngSubmit)="editCustomerHandler(editData.value)">
 
@@ -24,3 +51,5 @@
         <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
     </footer>
 </div>
+</body>
+</html>

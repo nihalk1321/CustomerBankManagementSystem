@@ -1,18 +1,71 @@
+<<<<<<< HEAD
 <header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
 <hr>
 <button><a routerLink="/customer">Back</a></button>
+=======
+<header ><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
+<!DOCTYPE html>
+<html lang="en" style="background-color:powderblue;">
+
+<head>
+  <title>Customer</title>
+  <meta charset="utf-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"> -->
+
+</head>
+<body style="background-color:rgb(208, 238, 138);" id="content-wrap">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <!-- <a class="navbar-brand" (click)="logoutHandler()">Logout</a> -->
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a routerLink="/customer">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Services
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a style="margin: 10px; font-size: large;" routerLink="/customerSummary">Account Summary</a></li>
+          <li><a style="margin: 10px; font-size: large;" routerLink="/updateCProfile">Update Profile</a></li>
+          <li><a style="margin: 10px; font-size: large;" routerLink="/addPayee">Add Payee</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Transaction
+          <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a style="margin: 10px; font-size: large;" [routerLink]="['/payeeList',24]">Send Payee</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+>>>>>>> 8bb397fbbbe86e233a2ccb9299666f1796d3f0d7
 <div class="container">
   <div>
     <!-- <h3>Get data</h3> -->
     <!-- <form >
+<<<<<<< HEAD
       <!-- Id : <input type="number" name="id" ngModel><br><br> -->
     <!-- <button class="btn btn-primary">Get summary</button>
     </form> -->
+=======
+       Id : <input type="number" name="id" ngModel><br><br> -->
+      <!-- <button class="btn btn-primary">Get summary</button>
+    </form> --> 
+>>>>>>> 8bb397fbbbe86e233a2ccb9299666f1796d3f0d7
   </div>
 
   <div class="container">
     <hr>
+<<<<<<< HEAD
     <!-- <table class="table table-striped">
+=======
+    <table class="table table-striped">
+      <button><a routerLink="/customer">Back</a></button><br>
+>>>>>>> 8bb397fbbbe86e233a2ccb9299666f1796d3f0d7
 
       <tr>
 
@@ -21,7 +74,11 @@
         <th>Address</th>
         <th>Phone</th>
         <th>username</th>
+<<<<<<< HEAD
         <th>username</th>
+=======
+        <th>balance</th>
+>>>>>>> 8bb397fbbbe86e233a2ccb9299666f1796d3f0d7
 
       </tr>
 
@@ -32,7 +89,11 @@
           <td>{{customer.customerAddress}}</td>
           <td>{{customer.customerPhone}}</td>
           <td>{{customer.customerUserName}}</td>
+<<<<<<< HEAD
           <td>{{customer.customerUserName}}</td>
+=======
+          <!-- <td>{{customer.account.accountBalance}}</td> -->
+>>>>>>> 8bb397fbbbe86e233a2ccb9299666f1796d3f0d7
 
         </tr>
       </tbody>
@@ -57,3 +118,5 @@
 <footer>
   <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
 </footer>
+</body>
+</html>

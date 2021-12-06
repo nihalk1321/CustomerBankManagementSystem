@@ -10,7 +10,7 @@
 <header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-color:powderblue;">
 
 <head>
     <meta charset="UTF-8">
@@ -23,17 +23,40 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
 </head>
-<header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
 
 
-<body>
+<body style="background-color:rgb(208, 238, 138);" id="content-wrap">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!-- <a class="navbar-brand" (click)="logoutHandler()">Logout</a> -->
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a routerLink="/customer">Home</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Services
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a style="margin: 10px; font-size: large;" routerLink="/customerSummary">Account Summary</a></li>
+              <li><a style="margin: 10px; font-size: large;" routerLink="/updateCProfile">Update Profile</a></li>
+              <li><a style="margin: 10px; font-size: large;" routerLink="/addPayee">Add Payee</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Transaction
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a style="margin: 10px; font-size: large;" [routerLink]="['/payeeList',24]">Send Payee</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <button><a routerLink="/customer">Back</a></button>
     <div class="jumbotron">
         <div class="row centered-form">
             <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Send Money to Payee</h3>
+                        <h3 class="panel-title">Send Money to Selected Payee</h3>
                     </div>
                     <div class="panel-body">
                         <form #postData="ngForm" (ngSubmit)="sendToPayeeHandler(postData.value)">
@@ -43,14 +66,14 @@
                                         <input type="number" name="cid" id="customerId" class="form-control input-sm"
                                             placeholder="customerId" ngModel>
                                     </div>
-                                </div> --> -->
+                                </div> -->
                                 <!-- <div class="col-xs-6 col-sm-6 col-md-6">
                                     <div class="form-group">
                                         <input type="number" name="accountNumber" id="payeeId"
                                             class="form-control input-sm" placeholder="Payee Id" ngModel>
                                     </div>
                                 </div>
-                            <!-- </div> -->
+                             </div> -->
 
                                 <div class="form-group">
                                     <input type="number" name="amount" class="form-control" placeholder="Amount" ngModel>

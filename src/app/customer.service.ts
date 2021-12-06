@@ -8,7 +8,7 @@ import { IPayee } from './Interfaces/IPayee';
 })
 export class CustomerService {
 
-  url = "http://localhost:8080/customer";
+  url = "http://localhost:8111/api/v1/customer";
 
   constructor(private http: HttpClient) { }
 

@@ -1,4 +1,33 @@
 <header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Employee</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color:powderblue;">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a routerLink="/employee">Home</a></li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Services
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/customerList">Customer List</a></li>
+                        <li><a routerLink="/registerCustomer">Register</a></li>
+                        <li><a routerLink="/updateEProfile">Update Profile</a></li>
+                    </ul>
+            </ul>
+        </div>
+    </nav>
 <div class="container">
     <form #editData="ngForm" (ngSubmit)="editEmployeeHandler(editData.value)">
 
@@ -23,3 +52,6 @@
 <footer>
     <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
 </footer>
+
+</body>
+</html>

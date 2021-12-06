@@ -28,9 +28,14 @@ export class UpdateProfileComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("Inside ng init");
+    console.log(sessionStorage.getItem('AdminId'));
 
     this.employeeService.getEmployeeById(sessionStorage.getItem('AdminId'))
+<<<<<<< HEAD
       .subscribe((data: any) => {
+=======
+      .subscribe(data => {
+>>>>>>> 8bb397fbbbe86e233a2ccb9299666f1796d3f0d7
         this.employee = data;
         console.log(this.employee);
       })

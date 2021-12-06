@@ -13,7 +13,8 @@ export class EmpGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const isAdmin = sessionStorage.getItem('AdminId')
-    if (isAdmin) {
+    if (sessionStorage.getItem('AdminId')!=null) {
+      console.log("Inside emploee guard - "+sessionStorage.getItem('AdminId'));
       console.log("Inisde if of canActivate of appguard ")
       return true;
     }

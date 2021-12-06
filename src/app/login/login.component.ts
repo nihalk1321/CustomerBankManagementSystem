@@ -8,7 +8,7 @@ import { ICustomer } from '../Interfaces/ICustomer';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  // template: `<app-customer [id] = gotId></app-customer>`,
+  template: `<app-customer [id] = gotId></app-customer>`,
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
@@ -16,42 +16,28 @@ export class LoginComponent implements OnInit {
   myCred: ICredentials;
 
   constructor(private employeeService: EmployeeService, private customerService: CustomerService, private router: Router) {
+
     this.myCred = {};
-  }
-  ngOnInit(): void {
+
 
   }
 
   loginHandler(formData: any) {
+    console.log("component" + formData)
     this.myCred.userNameDTO = formData.customerUserName;
     this.myCred.passwordDTO = formData.customerPassword;
-    console.log(formData.logintype)
-    
-    if (formData.logintype == 'employee') {
-      console.log('emp')
-      this.employeeService.authenticate(this.myCred)
-        .subscribe(data => {
-          console.log('emp data'+data)
-          if (data == null) {
-            alert('Invalid Credentials')
-            this.router.navigate(['login'])
-          }
-          else {
-            sessionStorage.setItem('AdminId', data)
-            this.router.navigate(['employee'])
-          }
-        })
+    console.log(this.myCred)
+    if (this.myCred.userNameDTO == 'Admin' && this.myCred.passwordDTO == 'admin') {
+      
+      sessionStorage.setItem('AdminId','Admin' )
+      this.router.navigate(['employee'])
     }
 
     else {
-      console.log('cust')
       this.customerService.authenticate(this.myCred)
         .subscribe(data => {
-          console.log('cust data'+data)
-          if (data == null) {
-            alert('Invalid Credentials')
+          if (data == null ||  sessionStorage.getItem('AdminId')) {
             this.router.navigate(['login'])
-
           }
           this.customerService.checkCustomerStatusService(data).subscribe(status => {
             if (status) {
@@ -63,9 +49,13 @@ export class LoginComponent implements OnInit {
               alert('Your Account is either is Locked or Inactive')
             }
           })
+
+
         })
     }
   }
 
+  ngOnInit(): void {
 
+  }
 }
