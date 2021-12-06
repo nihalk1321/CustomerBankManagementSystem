@@ -18,11 +18,18 @@ export class EmployeeService {
     })
   }
 
-  getEmployeeById(id: number) {
+  authenticate(data: any): Observable<any> {
+    console.log(data.userNameDTO);
+    console.log(data.passwordDTO);
+    console.log(data);
+
+    return this.http.post(this.url + "/authenticateEmp", data)
+  }
+  getEmployeeById(id: any) {
 
     return this.http.get(this.url + "/getEmployeeById/" + id);
   }
-  editEmployeeService(employeeId: number, employeeData: any) {
+  editEmployeeService(employeeId: any, employeeData: any) {
 
     return this.http.put(this.url + "/editEmployee/" + employeeId, employeeData)
   }

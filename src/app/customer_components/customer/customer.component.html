@@ -22,7 +22,7 @@
 <!-- </ul>
     </li>
   </ul>
-</div> --> 
+</div> -->
 <!-- <footer>
   <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
 </footer> -->
@@ -36,8 +36,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"> -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js">
 
 </head>
 
@@ -45,9 +45,9 @@
   <!-- <img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"> -->
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" (click)="logoutHandler()">Logout</a>
-      </div>
+      <!-- <div class="navbar-header"> -->
+      <a class="navbar-brand" (click)="logoutHandler()">Logout</a>
+      <!-- </div> -->
       <ul class="nav navbar-nav">
         <li class="active"><a routerLink="/customer">Home</a></li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Services
@@ -68,15 +68,24 @@
     </div>
   </nav>
 
-  <div class="container">
-    <div class="img">
-      <img src="assets/user.jpg">
+  <div class="card" style="width: 50rem; align-content: center;">
+    <!-- <img src="" class="card-img-top" alt="..."> -->
+    <div class="card-body">
+      <b>
+        <h5 class="card-title">Customer Name : {{customer.customerName}}</h5>
+      </b>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Customer Email : {{customer.customerEmail}}</li>
+        <li class="list-group-item">Customer Username : {{customer.customerUserName}}</li>
+        <li class="list-group-item">Customer Account balance : {{customer.account}}</li>
+      </ul>
     </div>
   </div>
-  <footer id="footer">
-    <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
-  </footer>
+
 </body>
+<footer id="footer">
+  <div>© Copyright Monocept- 2021 | All Rights Reserved </div>
+</footer>
 
 </html>
 

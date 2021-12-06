@@ -1,4 +1,4 @@
-<header ><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
+<header><img src="https://d3j0t7vrtr92dk.cloudfront.net/monoceptlearn/1618560985_monocept-logo-orange.png?"></header>
 <hr>
 <button><a routerLink="/customer">Back</a></button>
 <div class="container">
@@ -6,13 +6,13 @@
     <!-- <h3>Get data</h3> -->
     <!-- <form >
       <!-- Id : <input type="number" name="id" ngModel><br><br> -->
-      <!-- <button class="btn btn-primary">Get summary</button>
-    </form> --> 
+    <!-- <button class="btn btn-primary">Get summary</button>
+    </form> -->
   </div>
 
   <div class="container">
     <hr>
-    <table class="table table-striped">
+    <!-- <table class="table table-striped">
 
       <tr>
 
@@ -20,6 +20,7 @@
         <th>Email</th>
         <th>Address</th>
         <th>Phone</th>
+        <th>username</th>
         <th>username</th>
 
       </tr>
@@ -31,11 +32,26 @@
           <td>{{customer.customerAddress}}</td>
           <td>{{customer.customerPhone}}</td>
           <td>{{customer.customerUserName}}</td>
+          <td>{{customer.customerUserName}}</td>
 
         </tr>
       </tbody>
-    </table>
-
+    </table> -->
+    <div class="card" style="width: 50rem; align-content: center;">
+      <!-- <img src="" class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <b>
+          <h5 class="card-title">Customer Name : {{customer.customerName}}</h5>
+        </b>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Customer Email : {{customer.customerEmail}}</li>
+          <li class="list-group-item">Customer Address : {{customer.customerAddress}}</li>
+          <li class="list-group-item">Customer Phone : {{customer.customerPhone}}</li>
+          <li class="list-group-item">Customer Username : {{customer.customerUserName}}</li>
+          <li class="list-group-item">Customer Account balance : {{customer.account}}</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 <footer>

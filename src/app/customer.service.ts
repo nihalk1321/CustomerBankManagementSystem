@@ -19,8 +19,8 @@ export class CustomerService {
   }
 
   getCustomerDetailsByIdService(customerId: any): Observable<any> {
-    console.log(customerId);
-    console.log("Inside getCustomerDetailsById of CustomerService")
+    // console.log(customerId);
+    // console.log("Inside getCustomerDetailsById of CustomerService")
     return this.http.get(this.url + "/getCustomerDetails/" + customerId)
   }
 
@@ -43,7 +43,7 @@ export class CustomerService {
     console.log(data.passwordDTO);
     console.log(data);
 
-    return this.http.post(this.url + "/authenticate", data)
+    return this.http.post(this.url + "/authenticateCustomer", data)
   }
   addPayeeService(cid: any, payees: IPayee[]): Observable<any> {
     console.log('inside service')

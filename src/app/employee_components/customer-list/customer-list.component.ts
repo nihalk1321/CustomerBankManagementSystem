@@ -10,9 +10,12 @@ import { ICustomer } from 'src/app/Interfaces/ICustomer';
 })
 export class CustomerListComponent implements OnInit {
   customers: ICustomer[];
-  // account:IAccount
+  customer:ICustomer
+  account:IAccount
   constructor(private empServ: EmployeeService) {
     this.customers = []
+    this.customer={}
+    this.account={}
   }
 
   getAllCustomers() {
@@ -23,14 +26,14 @@ export class CustomerListComponent implements OnInit {
       })
   }
 
-  deleteHandler(customerId: number) {
-    if (confirm("Do you want to delete this record?")) {
-      this.empServ.deleteCustomerService(customerId)
-        .subscribe(data => {
-          this.getAllCustomers();
-        })
-    }
-  }
+  // deleteHandler(customerId: number) {
+  //   if (confirm("Do you want to delete this record?")) {
+  //     this.empServ.deleteCustomerService(customerId)
+  //       .subscribe(data => {
+  //         this.getAllCustomers();
+  //       })
+  //   }
+  // }
   ngOnInit(): void {
     this.getAllCustomers();
   }
